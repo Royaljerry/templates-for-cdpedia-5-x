@@ -1,0 +1,92 @@
+/**
+ * For details about CSS3 hyphenation see
+ * http://www.w3.org/TR/css3-text/#hyphenation
+*/
+/**
+ * ###################
+ * # SMALLER SCREENS #
+ * ###################
+*/
+@media only screen and (max-width: 1024px) and (min-width: 769px) {
+  header {
+    width: 98%; }
+
+  #maincontent {
+    width: 98%; }
+
+  .maincontent {
+    width: 98%; }
+
+  footer {
+    width: 98%; } }
+/**
+ * ###########
+ * # TABLETS #
+ * ###########
+*/
+@media only screen and (max-width: 768px) and (min-width: 481px) {
+  header {
+    width: 98%; }
+
+  #maincontent {
+    width: 98%; }
+
+  .maincontent {
+    width: 98%; }
+
+  footer {
+    width: 98%; } }
+/**
+ * ##########
+ * # PHONES #
+ * ##########
+*/
+@media only screen and (max-width: 480px) {
+  header {
+    width: 98%; }
+
+  #maincontent {
+    width: 98%; }
+
+  .maincontent {
+    width: 98%; }
+
+  footer {
+    width: 98%; }
+
+  /* Grid of eight turns into a grid of four */
+  .span_8_of_8 {
+    width: 100%;
+    margin-left: 0; }
+
+  .span_7_of_8 {
+    width: 100%;
+    margin-left: 0; }
+
+  .span_6_of_8 {
+    width: 100%;
+    margin-left: 0; }
+
+  .span_5_of_8 {
+    width: 100%;
+    margin-left: 0; }
+
+  .span_4_of_8 {
+    width: 100%;
+    margin-left: 0; }
+
+  .span_3_of_8 {
+    width: 74.2%;
+    margin: 1% 0 1% 3.2%; }
+
+  .span_2_of_8 {
+    width: 48.4%;
+    margin: 1% 0 1% 3.2%; }
+
+  .span_1_of_8 {
+    width: 22.6%;
+    margin: 1% 0 1% 3.2%; }
+
+  .span_1_of_8:nth-child(4n+1) {
+    clear: both;
+    margin-left: 0; } }

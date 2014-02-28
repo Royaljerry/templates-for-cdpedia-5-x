@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Details View</title>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="assets/Strict/css/html5reset.css" media="all">
+	<link rel="stylesheet" href="assets/Strict/css/rgs-normal.css" media="all">
+	<link rel="stylesheet" href="assets/Strict/css/rgs-responsive.css" media="all">
+	<link rel="stylesheet" href="assets/Strict/css/style.css" media="all">
+
+	<!-- Easybox -->
+	<link rel="stylesheet" href="assets/Strict/fw/easybox/styles/default/easybox.min.css" type="text/css" media="screen" />
+
+	<!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements and feature detects -->
+	<script src="assets/Strict/js/modernizr.js"></script>
+
+</head>
+
+<body>
+
+	<div id="debug"></div>
+
+	<div id="no-selection">
+		<h1>No item selected</h1>
+	</div>
+
+	<!--BeginRepeat-->
+	<div id="wrapper">
+
+		<div id="maincontentcontainer">
+			<div id="maincontent">
+
+				<div class="section group">
+
+					<!-- BEGIN Col: Left -->
+					<div class="col span_2_of_12" id="col_main_left">
+
+						<!-- BEGIN Section: Cover -->
+						<section id="cover">
+							<a href="[key:coverImageURL]" class="lightbox"><img src="[key:coverImageURL]" /></a>
+						</section>
+						<!-- END Section: Cover -->
+
+						<!-- BEGIN Base Info -->
+						<div id="base_info">
+
+							<!-- BEGIN Base Group -->
+							<div class="base_group">
+
+								<!-- BEGIN Section: Release -->
+								<section class="infoblock large right" id="release">
+									<h3><span class="subject">Release</span></h3>
+									<p><!--IFlabel<em>[key:label]</em>ENDlabel--><!--IFreleaseDate, <em>[key:releaseDate]</em>ENDreleaseDate--></p>
+									<!--IFcatalogNumber<p>[key:catalogNumber]</p>ENDcatalogNumber-->
+									<!--IFlocation<p>[key:location]</p>ENDlocation-->
+									<!--IFcustomTag1<p class="taglist">[key:customTag1]</p>ENDcustomTag1-->
+								</section>
+								<!-- END Section: Release -->
+
+								<!-- BEGIN Section: Original Release -->
+									<section class="infoblock large right" id="original_release">
+										<h3><span class="subject">Original Release</span></h3>
+										<!--IFcustomText2<p>[key:customText2]</p>ENDcustomText2-->
+										<!--IForiginalReleaseDate<p>[key:originalReleaseDate]</p>ENDoriginalReleaseDate-->
+									</section>
+								
+								<!-- END Section: Original Release -->
+
+								<!-- BEGIN Section: Series -->
+								<section class="infoblock large right" id="series">
+									<h3><span class="subject">Series</span></h3>
+									<!--IFcustom8
+										<p>[key:custom8]</p>
+									ENDcustom8-->
+								</section>
+								<!-- END Section: Series -->
+
+							</div>
+							<!-- END Base Group -->
+
+							<!-- BEGIN Base Group -->
+							<div class="base_group">
+
+								<!-- BEGIN Section: Genre -->
+								<section class="infoblock large right" id="genre">
+									<h3><span class="subject">Genre</span></h3>
+									<!--IFgenre
+										<p class="taglist">[key:genre]</p>
+									ENDgenre-->
+								</section>
+								<!-- END Section: Genre -->
+
+							</div>
+							<!-- END Base Group -->
+
+						</div>
+						<!-- END Base Info -->
+						
+					</div>
+					<!-- END Col: Left -->
+
+					<!-- BEGIN Col: Right -->
+					<div class="col span_10_of_12" id="col_main_right">
+
+						<div class="section group">
+
+							<!-- BEGIN Col: Header -->
+							<div class="col span_5_of_5" id="col_main_title">
+								<h1>[key:artist]</h1>
+								<h2>[key:title]</h2>
+							</div>
+							<!-- END Col: Header -->
+
+						</div>
+
+						<div class="section group">
+
+							<!-- BEGIN Col: Extra -->
+							<div class="col span_1_of_5" id="col_main_extra">
+
+								<!-- BEGIN Section: Content -->
+								<section class="infoblock small left" id="content">
+									<h3><span class="subject">Content</span></h3>
+									<!--IFcustom6<p><span class="entity">Release Type</span><span class="value">[key:custom6]</span></p>ENDcustom6-->
+									<!--IFcustom1<p><span class="entity">Legal Status</span><span class="value">[key:custom1]</span></p>ENDcustom1-->
+									<!--IFcustom10<p><span class="entity">Recording Type</span><span class="value">[key:custom10]</span></p>ENDcustom10-->
+									<!--IFcustomDate1<p><span class="entity">Recording Date</span><span class="value">[key:customDate1]</span></p>ENDcustomDate1-->
+									<!--IFcustom9<p><span class="entity">Issue Type</span><span class="value">[key:custom9]</span></p>ENDcustom9-->
+									<script type="text/javascript">document.write([key:customCheckbox1]);</script>
+									<!--IFcustomCheckbox1<p class="right fullwidth noborder">This is an <em>Original Soundtrack</em></p>ENDcustomCheckbox1-->
+								</section>
+								<!-- END Section: Content -->
+
+								<!-- BEGIN Section: Identifiers -->
+								<section class="infoblock small left" id="identifiers">
+									<h3><span class="subject">Identifiers</span></h3>
+									<!--IFupc<p><span class="entity">UPC</span><span class="value">[key:upc]</span></p>ENDupc-->
+									<!--IFasin<p><span class="entity">ASIN</span><span class="value">[key:asin]</span></p>ENDasin-->
+									<!--IFdiscID<p><span class="entity">Disc ID</span><span class="value">[key:discID]</span></p>ENDdiscID-->
+									<!--IFcollectionID<p><span class="entity">Collection ID</span><span class="value">[key:collectionID]</span></p>ENDcollectionID-->
+								</section>
+								<!-- END Section: Identifiers -->
+
+								<!-- BEGIN Section: Purchasing -->
+								<section class="infoblock small left" id="purchasing">
+									<h3><span class="subject">Purchasing</span></h3>
+									<!--IFpurchasedAt<p><span class="entity">Purchased At</span><span class="value">[key:purchasedAt]</span></p>ENDpurchasedAt-->
+									<!--IFpurchasedOn<p><span class="entity">Purchased On</span><span class="value">[key:purchasedOn]</span></p>ENDpurchasedOn-->
+									<!--IFcustom3<p><span class="entity">Got From</span><span class="value">[key:custom3]</span></p>ENDcustom3-->
+									<!--IFpaid<p><span class="entity">Paid</span><span class="value">[key:paid]</span></p>ENDpaid-->
+									<!--IFcustom7<p><span class="entity">Status</span><span class="value">[key:custom7]</span></p>ENDcustom7-->
+								</section>
+								<!-- END Section: Purchasing -->
+
+								<!-- BEGIN Section: Media -->
+								<section class="infoblock small left" id="media">
+									<h3><span class="subject">Media</span></h3>
+									<!--IFformat<p><span class="entity">Format</span><span class="value">[key:format]</span></p>ENDformat-->
+									<!--IFcustom4<p><span class="entity">Packaging</span><span class="value">[key:custom4]</span></p>ENDcustom4-->
+									<!--IFcustom2<p><span class="entity">Extra</span><span class="value">[key:custom2]</span></p>ENDcustom2-->
+									<script type="text/javascript">document.write([key:customCheckbox2]);</script>
+									<!--IFcustomCheckbox2<p class="right fullwidth noborder">This edition <em>contains bonus DVD</em></p>ENDcustomCheckbox2-->
+								</section>
+								<!-- END Section: Media -->
+
+								<!-- BEGIN Section: Contributors -->
+								<section class="infoblock small left" id="contributors">
+									<h3><span class="subject">Contributors</span></h3>
+									<!--IFcomposer<p><span class="entity">Composer</span><span class="value">[key:composer]</span></p>ENDcomposer-->
+									<!--IFconductor<p><span class="entity">Conductor</span><span class="value">[key:conductor]</span></p>ENDconductor-->
+									<!--IFcustom5<p><span class="entity">Orchestra</span><span class="value">[key:custom5]</span></p>ENDcustom5-->
+									<!--IFproducer<p><span class="entity">Producer</span><span class="value">[key:producer]</span></p>ENDproducer-->
+									<!--IFmixedBy<p><span class="entity">Mixed By</span><span class="value">[key:mixedBy]</span></p>ENDmixedBy-->
+									<!--IFarrangedBy<p><span class="entity">Arranged By</span><span class="value">[key:arrangedBy]</span></p>ENDarrangedBy-->
+								</section>
+								<!-- END Section: Contributors -->
+
+								<!-- BEGIN Section: Database -->
+								<section class="infoblock small left" id="database">
+									<h3><span class="subject">Database</span></h3>
+									<!--IFcustomTag2<p class="taglist">[key:customTag2]</p>ENDcustomTag2-->
+									<!--IFdateAdded<p><span class="entity">Added to database on</span><span class="value">[key:dateAdded]</span></p>ENDdateAdded-->
+								</section>
+								<!-- END Section: Database -->
+
+							</div>
+							<!-- END Col: Extra -->
+
+							<!-- BEGIN Col: Tracks -->
+							<div class="col span_2_of_5" id="col_main_tracks">
+
+								<!-- BEGIN Section: Tracklist -->
+								<section class="infoblock small left" id="tracklist">
+									<h3><span class="subject">Tracklist</span></h3>
+									<!--IFtracks
+										[tracksBegin]
+											<p>
+												IF_Tposition<span class="position">[track:position]</span>END_Tposition
+												IF_Tartist<span class="artist">[track:artist]</span>END_Tartist
+												IF_Tname<span class="name">[track:name]</span>END_Tname
+												IF_Tduration<span class="duration">[track:duration]</span>END_Tduration
+												IF_Tcomposer<span class="composer">Composed by <em>[track:composer]</em></span>END_Tcomposer
+											</p>
+										[tracksEnd]
+									ENDtracks-->
+								</section>
+								<!-- END Section: Tracklist -->
+
+								<!-- BEGIN Section: Totals -->
+								<section class="infoblock small left" id="totals">
+									<h3><span class="subject">Totals</span></h3>
+									<!--IFdiscs<p><span class="entity">Discs</span><span class="value">[key:discs]</span></p>ENDdiscs-->
+									<!--IFnumberOfTracks<p><span class="entity">Number of Tracks</span><span class="value">[key:numberOfTracks]</span></p>ENDnumberOfTracks-->
+									<!--IFduration<p><span class="entity">Duration</span><span class="value">[key:duration]</span></p>ENDduration-->
+								</section>
+								<!-- END Section: Totals -->
+
+							</div>
+							<!-- END Col: Tracks -->
+
+							<!-- BEGIN Col: Sum -->
+							<div class="col span_2_of_5" id="col_main_sum">
+
+								<!-- BEGIN Section: Summary -->
+								<section class="infoblock small left" id="summary">
+									<h3><span class="subject">Summary</span></h3>
+									<!--IFsummary<p class="noborder">[key:summary]</p>ENDsummary-->
+								</section>
+								<!-- END Section: Summary -->
+
+								<!-- BEGIN Section: More Info -->
+								<section class="infoblock small left" id="more_info">
+									<h3><span class="subject">More Info</span></h3>
+									<!--IFurl<p><a href="[key:url]">ENDurl--><!--IFcustomText1[key:customText1]ENDcustomText1--><!--IFurl</a></p>ENDurl-->
+								</section>
+								<!-- END Section: More Info -->
+
+								<!-- BEGIN Section: Rating -->
+								<section class="infoblock small left" id="rating">
+									<h3><span class="subject">Rating</span></h3>
+									<!--IFrating<p class="noborder">[key:rating]</p>ENDrating-->
+								</section>
+								<!-- END Section: Rating -->
+
+								<!-- BEGIN Section: My Rating -->
+								<section class="infoblock small left" id="my_rating">
+									<map id="my_rating_map" name="my_rating_map">
+										<area shape ="rect" coords ="0,0,20,20" href ="pedia://bruji.com/setMyRating=1" alt="1 Star" />
+										<area shape ="rect" coords ="21,0,41,20" href ="pedia://bruji.com/setMyRating=2" alt="2 Stars" />
+										<area shape ="rect" coords ="42,0,62,20" href ="pedia://bruji.com/setMyRating=3" alt="3 Stars" />
+										<area shape ="rect" coords ="63,0,83,20" href ="pedia://bruji.com/setMyRating=4" alt="4 Stars" />
+										<area shape ="rect" coords ="84,0,104,20" href ="pedia://bruji.com/setMyRating=5" alt="5 Stars" />
+									</map>
+									<h3><span class="subject">My Rating</span></h3>
+									<img src="assets/Strict/img/my-rating-[key:myRating].png" alt="My Rating" usemap="#my_rating_map" />
+									<a href="pedia://bruji.com/setMyRating=0">Remove</a>
+								</section>
+								<!-- END Section: My Rating -->
+
+								<!-- BEGIN Section: Comments -->
+								<section class="infoblock small left" id="comments">
+									<h3><span class="subject">Comments</span></h3>
+									<!--IFcomments<p class="noborder">[key:comments]</p>ENDcomments-->
+								</section>
+								<!-- END Section: Comments -->
+
+								<!-- BEGIN Section: Links -->
+								<section class="infoblock small left" id="links">
+									<h3><span class="subject">Links</span></h3>
+									<!--IFlinks
+										[linksBegin]
+											<p>
+												<span class="entity"><a href="[link:url]">[link:name]</a></span>
+												<span class="value">[link:type]</span>
+											</p>
+										[linksEnd]
+									ENDlinks-->
+								</section>
+								<!-- END Section: Links -->
+
+								<!-- BEGIN Section: Tags -->
+								<section class="infoblock small left" id="tags">
+									<h3><span class="subject">Tags</span></h3>
+									<!--IFtags<p class="taglist">[key:tags]</p>ENDtags-->
+								</section>
+								<!-- END Section: Tags -->
+
+							</div>
+							<!-- END Col: Sum -->
+
+						</div>
+
+					</div>
+					<!-- END Right -->
+
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!--EndRepeat-->
+
+	<!-- JavaScript at the bottom for fast page loading -->
+	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>window.jQuery || document.write('<script src="assets/Strict/js/jquery.js"><\/script>')</script>
+	<!--[if (lt IE 9) & (!IEMobile)]>
+	<script src="js/selectivizr.js"></script>
+	<![endif]-->
+	<!-- More Scripts-->
+	<script type="text/javascript" src="assets/Strict/fw/easybox/distrib.min.js"></script>
+	<script type="application/json" id="easyOptions">{"global": {"hideBottom": true}}</script>
+	<script type="text/javascript" src="assets/Strict/js/breakpoint.js"></script>
+	<script type="text/javascript" src="assets/Strict/js/_vars.js"></script>
+	<script type="text/javascript" src="assets/Strict/js/app.js"></script>
+
+	<script type="text/javascript">// debug('#element_id_here', 'e');</script>
+
+</body>
+</html>
