@@ -46,8 +46,9 @@
  *                                     allowed values:
  *
  *                                     VALUE               DESCRIPTION
- *                                     'e'                 Print out the content of a certain element
- *                                     'd'                 Print out the a certain content directly
+ *                                     'tag'               Print out a (HTML) tagged content
+ *                                     'str'               Print out a string directly
+ *                                     'mix'               Print out a (HTML) tagged string
  *
  * Returns:        None
 */
@@ -58,12 +59,15 @@ function debug(cItem, cMode)
 	var orig = $(target).html();
 	switch(cMode)
 	{
-		case 'e':
+		case 'tag':
 			var item = f(cItem);
 			var content = '<xmp>' + item.html() + '</xmp>';
 			break;
-		case 'd':
+		case 'str':
 			var content = cItem;
+			break;
+		case 'mix':
+			var content = '<xmp>' + cItem + '</xmp>';
 			break;
 	}
 	$(target).html(orig + '<p>' + content + '</p>');
@@ -86,7 +90,10 @@ jQuery.fn.extend
 			switch(cID)
 			{
 				case 'release':
-					var result = (content.indexOf('<p></p>') != -1) && (content.indexOf('<p class') == -1);
+					var result =
+						(content.indexOf('<p class="lh-small"></p>') != -1) &&
+						(content.indexOf('<p class="lh-large">') == -1) &&
+						(content.indexOf('<p class="taglist">') == -1);
 					break;
 				case 'tracklist':
 					var result = (content.indexOf('IF_Tposition') != -1);
@@ -115,6 +122,20 @@ jQuery.fn.extend
 		removeIf: function(c)
 		{
 			if(c) {this.css('display', 'none');}
+		},
+
+		// Replace content in a cretain element
+		rep: function(from, to)
+		{
+			var oStr = this.html();
+			var nStr = oStr.replace(from, to);
+			this.html(nStr);
+		},
+
+		// Replace content in a cretain element if a string is found in it
+		repIf: function(from, to, test)
+		{
+			if(this.html().indexOf(test) != -1) {this.rep(from, to);}
 		}
 
 	}
@@ -226,52 +247,26 @@ $(document).ready
 		// Post-formatting content elements
 
 		// Remove commas from between the taglist elements
-		$('p.taglist').each
-		(
-			function(i)
-			{
-				var oStr = $(this).html();
-				var nStr = oStr.replace(/, /g, '<span class="space_tag">&nbsp;</span>');
-				$(this).html(nStr);
-			}
-		);
+		$('p.taglist').each(function(i) {$(this).rep(/, /g, '<span class="space_tag">&nbsp;</span>');});
 
 		// Remove comma from before the release date when label is not provided
-		var oStr = $('#release').html();
-		var nStr = oStr.replace('<p>, <em>', '<p><em>');
-		$('#release').html(nStr);
+		$('#release').rep('<p>, <em>', '<p><em>');
 
 		// Make track infos (in square brackets) lighter than their main (base) names in the tracklist
-		$('#tracklist').find('p').find('.name').each
-		(
-			function()
-			{
-				var oStr = $(this).html();
-				$(this).html(oStr.replace(/( \[)([^\n]*)(\])/g, '<span class="info">$1$2$3</span>'), 'd');
-			}
-		);
+		$('#tracklist').find('p').find('.name').each(function() {$(this).rep(/( \[)([^\n]*)(\])/g, '<span class="info">$1$2$3</span>');});
 
 		// Replace default cover with the customized one and remove link if no cover provided
-		var oStr = $('#cover').html();
-		if(oStr.indexOf('plainImage.tiff') != -1)
-		{
-			var nStr = oStr.replace(/<a href=".*class="lightbox">/, '').replace('</a>', '').replace(/file:.*plainImage.tiff/g, 'assets/Strict/img/no-cover.png');
-			$('#cover').html(nStr);
-		}
+		$('#cover').repIf(/<a href=".*class="lightbox">/, '', 'plainImage.tiff');
+		$('#cover').repIf('</a>', '', 'plainImage.tiff');
+		$('#cover').repIf(/file:.*plainImage.tiff/g, 'assets/Strict/img/no-cover.png', 'plainImage.tiff');
 
 		// Put default text into "More Info" block's URL if it is empty
-		var oStr = $('#more_info').html();
-		if(oStr.indexOf('></a>') != -1)
-		{
-			var nStr = oStr.replace('></a>', '>More Info</a>');
-			$('#more_info').html(nStr);
-		}
+		$('#more_info').repIf('></a>', '>More Info</a>', '></a>');
 
-		// Replace line breaks with paragraphs in the "Summary" block
-		var oStr = $('#summary').html();
-		var nStr = oStr.replace(/<br>/g, '</p><p class="noborder">');
-		$('#summary').html(nStr);
-
+		// Replace line breaks with paragraphs in the "Summary" and "Comment" blocks
+		$('#summary').rep(/<br>/g, '</p><p class="noborder">');
+		$('#comments').rep(/<br>/g, '</p><p class="noborder">');
+		
 		// Remove empty infoblocks
 		$('.infoblock').each(function() {$(this).removeIf($(this).isEmpty());});
 

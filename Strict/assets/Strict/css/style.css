@@ -205,6 +205,18 @@ p.fullwidth {
     font-style: normal;
     color: #272424; }
 
+p.lh-root {
+  line-height: 1.25; }
+
+p.lh-small {
+  line-height: 1.5; }
+
+p.lh-large {
+  line-height: 1.7; }
+
+p.lh-xlarge {
+  line-height: 2; }
+
 /**
  * --- Inline Formattings ---
 */
@@ -312,8 +324,7 @@ img.floatright {
   padding: 0.125rem 0.45rem 0.1rem 0.45rem;
   background-color: #272424; }
 .large p {
-  font-size: 1rem;
-  line-height: 1.7; }
+  font-size: 1rem; }
 .large p.taglist {
   font-size: 0.833rem;
   line-height: 2; }
@@ -411,14 +422,12 @@ img.floatright {
         background-color: #d42f2f; }
       #wrapper #maincontentcontainer #maincontent #tracklist p .info {
         color: #747474; }
-      #wrapper #maincontentcontainer #maincontent #rating p, #wrapper #maincontentcontainer #maincontent #comments p {
+      #wrapper #maincontentcontainer #maincontent #rating p {
         padding-top: 0.4rem; }
-      #wrapper #maincontentcontainer #maincontent #summary p {
+      #wrapper #maincontentcontainer #maincontent #summary p, #wrapper #maincontentcontainer #maincontent #comments p {
         font-size: 0.833rem;
         padding-top: 0.26667rem;
         line-height: 1.35; }
-      #wrapper #maincontentcontainer #maincontent #rating p, #wrapper #maincontentcontainer #maincontent #comments p {
-        color: #747474; }
       #wrapper #maincontentcontainer #maincontent #my_rating {
         position: relative; }
         #wrapper #maincontentcontainer #maincontent #my_rating img {
@@ -444,7 +453,8 @@ img.floatright {
           color: white;
           background-color: #747474; }
       #wrapper #maincontentcontainer #maincontent #comments p {
-        font-style: italic; }
+        font-style: italic;
+        color: #747474; }
       #wrapper #maincontentcontainer #maincontent #more_info p, #wrapper #maincontentcontainer #maincontent #links p {
         line-height: 1.7;
         padding-top: 0.1rem; }
