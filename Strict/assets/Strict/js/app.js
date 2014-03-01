@@ -250,7 +250,7 @@ $(document).ready
 		$('p.taglist').each(function(i) {$(this).rep(/, /g, '<span class="space_tag">&nbsp;</span>');});
 
 		// Remove comma from before the release date when label is not provided
-		$('#release').rep('<p>, <em>', '<p><em>');
+		$('#release').rep('<p class="lh-small">, <em>', '<p class="lh-small"><em>');
 
 		// Make track infos (in square brackets) lighter than their main (base) names in the tracklist
 		$('#tracklist').find('p').find('.name').each(function() {$(this).rep(/( \[)([^\n]*)(\])/g, '<span class="info">$1$2$3</span>');});
